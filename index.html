@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Diffusion for World Modeling: Visual Details Matter in Atari (DIAMOND) 💎 Webpage.">
+  <meta name="keywords" content="DIAMOND, Diffusion, World Models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>💎</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">💎 DIAMOND 💎</br></br>Diffusion for World Modeling:</br>Visual Details Matter in Atari</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://eloialonso.github.io">Eloi Alonso</a><sup>*1</sup>,</span>
+            <span class="author-block">
+              <a href="https://adamjelley.github.io">Adam Jelley</a><sup>*2</sup>,</span>
+            <span class="author-block"></span></br>
+              <a href="https://vmicheli.github.io">Vincent Micheli</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.fi/citations?user=iPimqbwAAAAJ&hl=en">Anssi Kanervisto</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://homepages.inf.ed.ac.uk/amos/">Amos Storkey</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://teapearce.github.io">Tim Pearce</a><sup>†3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://fleuret.org/francois/">François Fleuret</a><sup>†1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Geneva,</span>
+            <span class="author-block"><sup>2</sup>University of Edinburgh</span>
+            <span class="author-block"><sup>3</sup>Microsoft Research</span></br>
+            <!-- <span class="author-block"><sup>*</sup>Equal Contribution</span>
+            <span class="author-block"><sup>†</sup>Equal Supervision</span> -->
+          </div>
+          </br>
+          <h2 class="title is-2 publication-subtitle">NeurIPS 2024 Spotlight</h2>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2405.12399"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2405.12399"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://t.co/Vxci8CkzzH"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- X Link. -->
+              <span class="link-block">
+                <a href="https://x.com/EloiAlonso1/status/1793916382779982120"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-twitter" style="color: #ffffff;"></i>
+                  </span>
+                  <span>Thread</span>
+                </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span> -->
+            </div>
+          </div>
+          </br>
+          <center><figure></figure>
+            <img src="static/gifs/diamond.gif" alt="Diamond agent playing in Diffusion World Model." style="width:70%">
+            <figcaption style="width:80%"><blockquote>DIAMOND agent playing in its Diffusion World Model.</blockquote></figcaption>
+          </figure></center>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            World models constitute a promising approach for training reinforcement learning agents in a safe and sample-efficient manner.
+            Recent world models predominantly operate on sequences of discrete latent variables to model environment dynamics.
+            However, this compression into a compact discrete representation may ignore visual details that are important for reinforcement learning.
+            Concurrently, diffusion models have become a dominant approach for image generation, challenging well-established methods
+            modeling discrete latents. Motivated by this paradigm shift, we introduce DIAMOND (DIffusion As a Model Of eNvironment Dreams),
+            a reinforcement learning agent trained in a diffusion world model. We analyze the key design choices that are required to make
+            diffusion suitable for world modeling, and demon- strate how improved visual details can lead to improved agent performance.
+            DIAMOND achieves a mean human normalized score of 1.46 on the competitive Atari 100k benchmark;
+            a new best for agents trained entirely within a world model. To foster future research on diffusion for world modeling,
+            we release our code, agents and playable world models at <a href=https://github.com/eloialonso/diamond>https://github.com/eloialonso/diamond</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{alonso2024diffusionworldmodelingvisual,
+      title={Diffusion for World Modeling: Visual Details Matter in Atari},
+      author={Eloi Alonso and Adam Jelley and Vincent Micheli and Anssi Kanervisto and Amos Storkey and Tim Pearce and François Fleuret},
+      year={2024},
+      eprint={2405.12399},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2405.12399},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/pdf/2405.12399">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/eloialonso/diamond" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website was adapted from the popular <a
+              href="https://nerfies.github.io">Nerfies</a> project page and is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
