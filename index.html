@@ -104,7 +104,7 @@
             <!-- <span class="author-block"><sup>*</sup>Equal Contribution</span>
             <span class="author-block"><sup>†</sup>Equal Supervision</span> -->
           </div>
-          </br>
+          <br>
           <h2 class="title is-2 publication-subtitle">NeurIPS 2024 Spotlight</h2>
 
           <div class="column has-text-centered">
@@ -160,16 +160,18 @@
               </span> -->
             </div>
           </div>
-          </br>
-          <center><figure></figure>
-            <img src="static/gifs/diamond.gif" alt="Diamond agent playing in Diffusion World Model." style="width:70%">
-            <figcaption style="width:80%"><blockquote>DIAMOND agent playing in its Diffusion World Model.</blockquote></figcaption>
-          </figure></center>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<center>
+  <img src="static/gifs/diamond.gif" alt="Diamond agent playing in Diffusion World Model." style="width:40%">
+  <figcaption >
+    <blockquote style="width:40%">DIAMOND 💎 (DIffusion As a Model Of eNvironment Dreams) is a reinforcement learning agent trained entirely in a diffusion world model.</blockquote>
+  </figcaption>
+</center>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -185,7 +187,7 @@
             Concurrently, diffusion models have become a dominant approach for image generation, challenging well-established methods
             modeling discrete latents. Motivated by this paradigm shift, we introduce DIAMOND (DIffusion As a Model Of eNvironment Dreams),
             a reinforcement learning agent trained in a diffusion world model. We analyze the key design choices that are required to make
-            diffusion suitable for world modeling, and demon- strate how improved visual details can lead to improved agent performance.
+            diffusion suitable for world modeling, and demonstrate how improved visual details can lead to improved agent performance.
             DIAMOND achieves a mean human normalized score of 1.46 on the competitive Atari 100k benchmark;
             a new best for agents trained entirely within a world model. To foster future research on diffusion for world modeling,
             we release our code, agents and playable world models at <a href=https://github.com/eloialonso/diamond>https://github.com/eloialonso/diamond</a>.
@@ -194,6 +196,82 @@
       </div>
     </div>
     <!--/ Abstract. -->
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <h2 class="title is-3">How does it work?</h2>
+            <p>
+              We train a diffusion model to predict the next frame of the game.
+              The diffusion model takes into account the agent’s action and the previous frames
+              to simulate the environment response.
+            </p>
+            <center><figure></figure>
+              <img src="static/gifs/kungfu.gif" alt="The diffusion world model takes into account the agent's action and previous frames to generate the next frame." style="width:80%">
+              <figcaption style="width:70%"><blockquote>The diffusion world model takes into account the agent's action and previous frames to generate the next frame.</blockquote></figcaption>
+            </figure></center>
+          <p></br>
+            The agent repeatedly provides new actions, and the diffusion model updates the game.
+          </p>
+          <p>
+            The diffusion model acts as a world model in which the agent can learn to play.
+          </p>
+          <center>
+            <img src="static/gifs/imagination.gif" alt="Autoregressive generation with diffusion world model." style="width:80%">
+            <figcaption style="width:70%"><blockquote>Autoregressive generation enables the diffusion model to act as a world model in which the agent can learn to play.</blockquote></figcaption>
+          </center>
+          <br>
+            <p>
+            To make the world model fast, we need to reduce the number of denoising steps.
+            We found DDPM (Ho et al. 2020) to become unstable with low numbers of denoising steps.
+            In contrast, we found EDM (Karras et al., 2022) to produce stable trajectories even for 1 denoising step.
+          </p>
+          <center>
+            <img src="static/gifs/ddpm.gif" alt="DDPM vs EDM based diffusion world models. The DDPM-based model becomes unstable for low numbers of denoising steps, while the EDM-based model remains stable." style="width:80%">
+            <figcaption style="width:80%"><blockquote>The DDPM-based model is unstable for low numbers of denoising steps due to accumulating autoregressive error, while the EDM-based model remains stable. Lower denoising steps enables a faster world model.</blockquote></figcaption>
+          </center>
+          <br>
+          <p>
+            But in Boxing, 1-step denoising interpolates between possible outcomes and results in blurry predictions for the unpredictable black player.
+          </p>
+          <p>
+            In contrast, using more denoising steps enables better selection of a particular mode, improving consistency over time.
+          </p>
+          <center>
+            <img src="static/gifs/boxing.gif" alt="Diffusion world model trajectories for the Atari game Boxing for varying numbers of denoising steps." style="width:80%">
+            <figcaption style="width:90%"><blockquote>Larger numbers of denoising steps n enable better mode selection for transitions with multiple modes. We therefore use n=3 for Diamond's diffusion world model.</blockquote></figcaption>
+          </center>
+          <br>
+          <p>
+            Interestingly, the white player's movements are predicted correctly regardless of the number of denoising steps.
+            This is because it is controlled by the policy, so its actions are given to the world model. This removes any ambiguity that can cause blurry predictions.
+          </p>
+          <p>
+            We find that diffusion-based DIAMOND provides better modeling of important visual details than the discrete token-based <a href="https://arxiv.org/abs/2209.00588">IRIS</a>.
+          </p>
+          <center>
+            <img src="static/gifs/iris.gif" alt="Visualisation of IRIS and DIAMOND world's models on Asterix, Breakout and RoadRunner." style="width:80%">
+            <figcaption style="width:70%"><blockquote>DIAMOND's world model is able to better capture important visual details than the discrete token-based IRIS.</blockquote></figcaption>
+          </center>
+          <br>
+          <p>
+            Training an agent with reinforcement learning on this diffusion world model, DIAMOND achieves a mean human-normalized score of 1.46 on Atari 100k (46% better than human); a new best for agents trained in a world model on 100k frames.
+          </p>
+          <p>
+            Try out our playable world models for yourself using the below! Full instructions <a href="https://github.com/eloialonso/diamond">here</a>.
+          </p>
+              <pre>
+              <code>git clone git@github.com:eloialonso/diamond.git
+              cd diamond
+              conda create -n diamond python=3.10
+              conda activate diamond
+              pip install -r requirements.txt
+              python src/play.py --pretrained</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
@@ -227,12 +305,12 @@
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-          <p>
+          <center><p>
             This website was adapted from the popular <a
-              href="https://nerfies.github.io">Nerfies</a> project page and is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            href="https://nerfies.github.io">Nerfies</a> project page and is licensed under a <a rel="license"
+            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
+          </p></center>
         </div>
       </div>
     </div>
