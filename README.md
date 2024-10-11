@@ -6,13 +6,11 @@ This repository contains source code for the [DIAMOND website](https://diamond-w
 
 If you find DIAMOND useful please cite:
 ```
-@misc{alonso2024diffusionworldmodelingvisual,
+@inproceedings{alonso2024diffusionworldmodelingvisual,
       title={Diffusion for World Modeling: Visual Details Matter in Atari},
       author={Eloi Alonso and Adam Jelley and Vincent Micheli and Anssi Kanervisto and Amos Storkey and Tim Pearce and François Fleuret},
+      booktitle={Thirty-eighth Conference on Neural Information Processing Systems}}
       year={2024},
-      eprint={2405.12399},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
       url={https://arxiv.org/abs/2405.12399},
 }
 ```

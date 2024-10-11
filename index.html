@@ -2,29 +2,47 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Diffusion for World Modeling: Visual Details Matter in Atari (DIAMOND) 💎 Webpage.">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Diffusion for World Modeling: Visual Details Matter in Atari (DIAMOND) 💎 Webpage">
+  <meta property="og:title" content="Diffusion for World Modeling: Visual Details Matter in Atari (DIAMOND) 💎"/>
+  <meta property="og:description" content="Diffusion for World Modeling: Visual Details Matter in Atari (DIAMOND) 💎 Webpage"/>
+  <meta property="og:url" content="https://diamond-wm.github.io"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/favicon.ico" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="💎 DIAMOND">
+  <meta name="twitter:description" content="Diffusion for World Modeling: Visual Details Matter in Atari (DIAMOND) 💎">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/favicon.ico">
+  <meta name="twitter:card" content="Diffusion for World Modeling: Visual Details Matter in Atari (DIAMOND) 💎 Webpage">
+  <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords" content="DIAMOND, Diffusion, World Models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>💎</title>
 
+
+  <title>DIAMOND</title>
+  <link rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
 </head>
 <body>
 
@@ -99,10 +117,10 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>University of Geneva,</span>
-            <span class="author-block"><sup>2</sup>University of Edinburgh</span>
+            <span class="author-block"><sup>2</sup>University of Edinburgh,</span>
             <span class="author-block"><sup>3</sup>Microsoft Research</span></br>
-            <!-- <span class="author-block"><sup>*</sup>Equal Contribution</span>
-            <span class="author-block"><sup>†</sup>Equal Supervision</span> -->
+            <span class="author-block"><sup>*</sup>Equal Contribution&ensp;</span>
+            <span class="author-block"><sup>†</sup>Equal Supervision</span>
           </div>
           <br>
           <h2 class="title is-2 publication-subtitle">NeurIPS 2024 Spotlight</h2>
@@ -145,7 +163,16 @@
                   <span class="icon">
                       <i class="fab fa-twitter" style="color: #ffffff;"></i>
                   </span>
-                  <span>Thread</span>
+                  <span>Atari</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://x.com/EloiAlonso1/status/1844803606064611771"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-twitter" style="color: #ffffff;"></i>
+                  </span>
+                  <span>CSGO</span>
                 </a>
               </span>
               <!-- Dataset Link. -->
@@ -162,18 +189,27 @@
           </div>
         </div>
       </div>
+      <center>
+        <img src="static/gifs/half_diamond.gif" alt="Diamond agent playing in Atari Diffusion World Model." style="width:80%;">
+        <figcaption >
+          <blockquote style="width:80%">DIAMOND 💎 (DIffusion As a Model Of eNvironment Dreams) is a reinforcement learning agent trained entirely in a diffusion world model. The agent playing in the diffusion model is shown above.</blockquote>
+        </figcaption>
+        <br>
+        <video poster="" id="video0" autoplay muted loop playsinline width="80%">
+                  <!-- Your video file here -->
+                  <source src="static/videos/grid.mp4"
+                  type="video/mp4">
+        </video>
+        <figcaption >
+          <blockquote style="width:80%">DIAMOND's diffusion world model can also be trained to simulate 3D environments, such as CounterStrike: Global Offensive (CSGO).</blockquote>
+        </figcaption>
+      </center>
+      <br>
     </div>
   </div>
 </section>
 
-<center>
-  <img src="static/gifs/diamond.gif" alt="Diamond agent playing in Diffusion World Model." style="width:40%">
-  <figcaption >
-    <blockquote style="width:40%">DIAMOND 💎 (DIffusion As a Model Of eNvironment Dreams) is a reinforcement learning agent trained entirely in a diffusion world model.</blockquote>
-  </figcaption>
-</center>
-
-<section class="section">
+<section class="section hero is-light">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -195,8 +231,105 @@
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
+  </div>
+</section>
+<!--/ Abstract. -->
 
+<!-- Video carousel -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">CSGO DIAMOND 💎 Diffusion World Model Demonstrations</h2>
+      <center>
+        <div style="width:80%;">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-video1">
+              <video poster="" id="video1" autoplay controls muted loop playsinline width="100%">
+                <!-- Your video file here -->
+                <source src="static/videos/8.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video2">
+              <video poster="" id="video2" autoplay controls muted loop playsinline width="100%">
+                <!-- Your video file here -->
+                <source src="static/videos/23.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video3">
+              <video poster="" id="video3" autoplay controls muted loop playsinline width="100%">\
+                <!-- Your video file here -->
+                <source src="static/videos/20.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video4">
+              <video poster="" id="video4" autoplay controls muted loop playsinline width="100%">\
+                <!-- Your video file here -->
+                <source src="static/videos/22.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video5">
+              <video poster="" id="video5" autoplay controls muted loop playsinline width="100%">\
+                <!-- Your video file here -->
+                <source src="static/videos/18.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </center>
+      <h4 class="subtitle is-5 has-text-centered">
+        All videos generated by a human playing with keyboard and mouse inside<br> DIAMOND's diffusion world model, trained on CSGO.
+      </h4>
+    </div>
+  </div>
+</section>
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h3 class="title is-3">Try it for yourself</h3>
+        <div class="item item-video0 has-text-centered">
+          <video poster="" id="video0" autoplay controls muted loop playsinline center width="70%">
+            <!-- Your video file here -->
+            <source src="static/videos/stephane.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+          <p style="text-align: center;">
+            Try out our playable CSGO and Atari world models for yourself:
+            <i class="fab fa-github"><a class="icon-link" href="https://github.com/eloialonso/diamond" class="external-link"></a></i>
+            <a href="https://github.com/eloialonso/diamond">Installation Instructions </a>
+          </p>
+          <br>
+            <center>
+              <code class="column is-three-fifths hero is-dark" style="text-align: left;">
+                git clone git@github.com:eloialonso/diamond.git<br>
+                cd diamond<br>
+                conda create -n diamond python=3.10<br>
+                conda activate diamond<br>
+                pip install -r requirements.txt<br>
+              </code>
+              <br>
+              To play our <a href="https://github.com/eloialonso/diamond">Atari</a> world models:
+              <code class="column is-three-fifths hero is-dark" style="text-align: left;">
+                python src/play.py --pretrained<br>
+              </code>
+              <br>
+              For our <a href="https://github.com/eloialonso/diamond/tree/csgo">CSGO</a> world model:
+              <code class="column is-three-fifths hero is-dark" style="text-align: left;">
+                git checkout csgo<br>
+                python src/play.py<br>
+              </code>
+            </center>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <div class="content has-text-justified">
@@ -206,11 +339,11 @@
               The diffusion model takes into account the agent’s action and the previous frames
               to simulate the environment response.
             </p>
-            <center><figure></figure>
+            <figure>
               <img src="static/gifs/kungfu.gif" alt="The diffusion world model takes into account the agent's action and previous frames to generate the next frame." style="width:80%">
-              <figcaption style="width:70%"><blockquote>The diffusion world model takes into account the agent's action and previous frames to generate the next frame.</blockquote></figcaption>
-            </figure></center>
-          <p></br>
+              <center><blockquote style="width:70%; text-align:center">The diffusion world model takes into account the agent's action and previous frames to generate the next frame.</blockquote></center>
+            </figure>
+          <p><br>
             The agent repeatedly provides new actions, and the diffusion model updates the game.
           </p>
           <p>
@@ -223,8 +356,8 @@
           <br>
             <p>
             To make the world model fast, we need to reduce the number of denoising steps.
-            We found DDPM (Ho et al. 2020) to become unstable with low numbers of denoising steps.
-            In contrast, we found EDM (Karras et al., 2022) to produce stable trajectories even for 1 denoising step.
+            We found <a href="https://arxiv.org/abs/2006.11239">DDPM</a> (Ho et al. 2020) to become unstable with low numbers of denoising steps.
+            In contrast, we found <a href="https://arxiv.org/abs/2206.00364">EDM</a> (Karras et al., 2022) to produce stable trajectories even for 1 denoising step.
           </p>
           <center>
             <img src="static/gifs/ddpm.gif" alt="DDPM vs EDM based diffusion world models. The DDPM-based model becomes unstable for low numbers of denoising steps, while the EDM-based model remains stable." style="width:80%">
@@ -256,17 +389,10 @@
           <br>
           <p>
             Training an agent with reinforcement learning on this diffusion world model, DIAMOND achieves a mean human-normalized score of 1.46 on Atari 100k (46% better than human); a new best for agents trained in a world model on 100k frames.
+            <br>
+            <br>
+            Check out our <a href="https://arxiv.org/pdf/2405.12399">paper</a> for more details!
           </p>
-          <p>
-            Try out our playable world models for yourself using the below! Full instructions <a href="https://github.com/eloialonso/diamond">here</a>.
-          </p>
-              <pre>
-              <code>git clone git@github.com:eloialonso/diamond.git
-              cd diamond
-              conda create -n diamond python=3.10
-              conda activate diamond
-              pip install -r requirements.txt
-              python src/play.py --pretrained</code></pre>
         </div>
       </div>
     </div>
@@ -275,16 +401,14 @@
 
 
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{alonso2024diffusionworldmodelingvisual,
+<section class="section hero is-light" id="BibTeX">
+  <div class="container is-max-desktop">
+    <h3 class="title is-3">BibTeX</h3>
+    <pre style="background-color: white;"><code>@inproceedings{alonso2024diffusionworldmodelingvisual,
       title={Diffusion for World Modeling: Visual Details Matter in Atari},
       author={Eloi Alonso and Adam Jelley and Vincent Micheli and Anssi Kanervisto and Amos Storkey and Tim Pearce and François Fleuret},
+      booktitle={Thirty-eighth Conference on Neural Information Processing Systems}}
       year={2024},
-      eprint={2405.12399},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
       url={https://arxiv.org/abs/2405.12399},
 }</code></pre>
   </div>
@@ -294,6 +418,9 @@
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
+      <a class="icon-link" href="https://diamond-wm.github.io">
+          <i class="fas fa-home"></i>
+      </a>
       <a class="icon-link"
          href="https://arxiv.org/pdf/2405.12399">
         <i class="fas fa-file-pdf"></i>
@@ -306,8 +433,8 @@
       <div class="column is-8">
         <div class="content">
           <center><p>
-            This website was adapted from the popular <a
-            href="https://nerfies.github.io">Nerfies</a> project page and is licensed under a <a rel="license"
+            This website (<a href="https://github.com/diamond-wm/diamond-wm.github.io">source code</a>) was adapted from the popular <a
+            href="https://nerfies.github.io">Nerfies</a> project page and is licensed under a <br><a rel="license"
             href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p></center>
