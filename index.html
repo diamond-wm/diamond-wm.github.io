@@ -389,9 +389,6 @@
           <br>
           <p>
             Training an agent with reinforcement learning on this diffusion world model, DIAMOND achieves a mean human-normalized score of 1.46 on Atari 100k (46% better than human); a new best for agents trained in a world model on 100k frames.
-            <br>
-            <br>
-            Check out our <a href="https://arxiv.org/pdf/2405.12399">paper</a> for more details!
           </p>
         </div>
       </div>
@@ -399,7 +396,72 @@
   </div>
 </section>
 
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+          <h2 class="title is-3" style="color: rgb(50, 50, 50);">Scaling to CSGO</h2>
+            <p>
+              To apply DIAMOND's diffusion world model to CSGO, we made the following changes:
+                <ul>
+                  <li><b>No RL</b>: We used a fixed dataset of 87h of human gameplay instead of data collected with an RL agent.</li>
+                  <li><b>Two-stage pipeline</b>: We perform dynamics prediction in low resolution, before upsampling with a second model, reducing training cost.</li>
+                  <li><b>Scaling</b>: We scaled up the diffusion model from 4.4M parameters for Atari to 381M for CSGO (including 51M for the additional upsampler).</li>
+                  <li><b>Stochastic sampling</b>: We used stochastic sampling for the upsampler to improve visual generation quality (not necessary for the dynamics model).</li>
+                </ul>
+              Our model was trained in 12 days on an RTX 4090, and can be played at ~10 FPS on an RTX 3090.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="hero body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+            <h2 class="title is-3">Limitations</h2>
+              <p>
+                There are still many limitations of our model, some of which are shown below. 
+              </p>
+              <div style="text-align: center;">
+                <video poster="" id="video0" autoplay muted loop playsinline width="80%">
+                      <!-- Your video file here -->
+                      <source src="static/videos/failures.mp4"
+                      type="video/mp4">
+                </video>
+                <figcaption style="text-align: center;">Representative failure modes of 💎 DIAMOND's diffusion world model.</figcaption>
+              </div>
+              <br>
+              <p>
+                We expect many of these aspects of our world model to improve by further scaling up data and compute. However, scaling would not solve everything, such as those due to the limited memory of our model.
+              </p>
+              <p>
+                One interesting limitation is that our model will compose multiple jumps in a row by generalizing the effect of a jump on the geometry of the scene. 
+                The model does not learn that this is not possible, since multiple jumps do not appear often enough in the training data.
+              </p>
+              <div style="text-align: center;">
+                <video poster="" id="video0" autoplay muted loop playsinline width="80%">
+                      <!-- Your video file here -->
+                      <source src="static/videos/jump.mp4"
+                      type="video/mp4">
+                </video>
+                <figcaption style="text-align: center;">💎 DIAMOND's model allows multiple jumps, even though only single jumps should be possible.</figcaption>
+              </div>
+              <br>
+              Check out our <a href="https://arxiv.org/pdf/2405.12399">paper</a> for more details!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section hero is-light" id="BibTeX">
   <div class="container is-max-desktop">
